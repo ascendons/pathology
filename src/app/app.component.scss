@@ -1,0 +1,121 @@
+/* Header Styling */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    // padding: 10px;
+    height: 60px;
+    text-align: center;
+    z-index: 1000;
+  }
+  
+  .container {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: calc(100vh - 60px);
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  /* Left Section */
+  .left-section {
+    padding: 20px;
+    border-right: 1px solid #ccc;
+  }
+  
+  /* Grid Form Layout */
+  .grid-form {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  
+  .grid-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+  }
+  
+  .grid-cell {
+    margin-bottom: 10px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  .grid-form label {
+    font-weight: bold;
+    align-self: center;
+    width: 50%;
+  }
+  
+  .grid-form input {
+    width: 80%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  .grid-form select {
+    width: 80%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Grid Report Layout */
+  .grid-report {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .report-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .report-item span {
+    font-weight: bold;
+  }
+  
+  .report-item input {
+    width: 50%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Button Styling */
+  .btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  .btn:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Right Section (PDF Preview) */
+  .right-section {
+    padding: 20px;
+  }
+  
+  .right-section iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+  

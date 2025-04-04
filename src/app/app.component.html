@@ -1,0 +1,62 @@
+<header class="header">
+  <h2>Om Patholab and Diagnostic Center</h2>
+</header>
+
+<div class="container">
+  <!-- Left Section: Patient Info & Report -->
+  <div class="left-section">
+    <h2>Patient Information</h2>
+    <div class="grid-form">
+      <div class="grid-row">
+        <div class="grid-cell">
+          <label for="name">Name</label>
+          <input id="name" type="text" [(ngModel)]="patientDetails.name" />
+        </div>
+        <div class="grid-cell">
+          <label for="age">Age</label>
+          <input id="age" type="number" [(ngModel)]="patientDetails.age" />
+        </div>
+      </div>
+      <div class="grid-row">
+        <div class="grid-cell">
+          <label for="refby">Referred By</label>
+          <input id="refby" type="text" [(ngModel)]="patientDetails.refBy" />
+        </div>
+        <div class="grid-cell">
+          <label for="gender">Gender</label>
+          <select id="gender" [(ngModel)]="patientDetails.gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="!selectedTest">
+      <label for="testType">Test Type</label>
+      <select id="selectedTest" [(ngModel)]="selectedTest" (ngModelChange)="selectTest()">
+        <option *ngFor="let test of testNames" [value]="test.name">{{ test.label }}</option>
+      </select>
+    </div>
+    <div *ngIf="selectedTest">
+      <h3>{{ selectedTestObject.label }}</h3>
+      <button (click)="selectedTest = null">Change Test</button>
+    </div>
+
+    <div class="grid-report" *ngIf="selectedTest">
+      <div class="report-item" *ngFor="let test of selectedTestObject.tests">
+        <span>{{ test.test }}</span>
+        <input type="text" [(ngModel)]="test.result" />
+      </div>
+    </div>
+
+    <button (click)="generatePDF()" *ngIf="selectedTest" class="btn">Generate PDF</button>
+  </div>
+
+  <!-- Right Section: PDF Preview -->
+  <div class="right-section" *ngIf="pdfUrl">
+    <h2>Generated Report</h2>
+    <iframe [src]="pdfUrl | safeUrl"></iframe>
+  </div>
+</div>

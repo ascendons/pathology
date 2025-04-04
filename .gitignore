@@ -1,0 +1,41 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Compiled output
+/tmp
+/out-tsc
+/bazel-out
+
+# Angular cache
+.angular/cache
+.sass-cache/
+connect.lock
+coverage/
+libpeerconnection.log
+testem.log
+typings/
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# IDE - JetBrains
+.idea/
+*.iml
+*.iws
+*.ipr
+.idea_modules/
+
+# IDE - Eclipse
+.classpath
+.project
+.settings/
+
+# System Files
+.DS_Store
+Thumbs.db
