@@ -71,7 +71,8 @@ export class AppComponent {
   
     // Generate PDF as Blob URL
     const pdfBlob = doc.output('blob');
-    this.pdfUrl = URL.createObjectURL(pdfBlob);
+    // this.pdfUrl = URL.createObjectURL(pdfBlob);
+   this.generateStaticHTML();
   }
     // Open the PDF in a new tab
     // const newTab = window.open();
@@ -82,5 +83,59 @@ export class AppComponent {
 
     selectTest(){
       this.selectedTestObject = this.testNames.find((test) => test.name === this.selectedTest);
+    }
+    generateStaticHTML() {
+      const html = `
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #f0f0f0;
+    }
+  </style>
+  <h1>Om Patholab and Diagnostic Center</h1>
+  <h2>Patient Details</h2>
+  <p>Patient Name: ${this.patientDetails.name}</p>
+  <p>Age: ${this.patientDetails.age}</p>
+  <p>Gender: ${this.patientDetails.gender}</p>
+  <p>Referred By: ${this.patientDetails.refBy}</p>
+  <p>Date: ${new Date().toLocaleDateString()}</p>
+  <h2>Report</h2>
+  <table>
+    <tr>
+      <th>Parameter</th>
+      <th>Value</th>
+      <th>Unit</th>
+      <th>Limitations</th>
+    </tr>
+    ${this.selectedTestObject?.tests.map((test: { test: any; result: any; unit: any; limitations: any}) => `
+      <tr>
+        <td>${test.test}</td>
+        <td>${test.result}</td>
+        <td>${test.unit}</td>
+        <td>${test.limitations}</td>
+      </tr>
+    `).join('')}
+  </table>
+  <button onclick="window.print()">Print</button>
+`;
+//open html in new tab
+      const newTab = window.open();
+      if (newTab) {
+        newTab.document.write(html);
+        newTab.document.close();
+      }
+
+
     }
 }
