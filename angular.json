@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/pathology_report/browser",
+            "outputPath": "dist/pathology_report",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
