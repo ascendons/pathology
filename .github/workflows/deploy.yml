@@ -3,7 +3,7 @@ name: Deploy Angular to GitHub Pages
 on:
   push:
     branches:
-      - master  # or 'master' if that's your default
+      - main
 
 jobs:
   deploy:
@@ -24,10 +24,5 @@ jobs:
       - name: Build Angular app
         run: npm run build -- --configuration production --base-href /pathology/
 
-      - name: Set Git identity
-        run: |
-          git config user.name "GitHub Actions"
-          git config user.email "actions@github.com"
-
       - name: Deploy to GitHub Pages
-        run: npx angular-cli-ghpages --dir=dist/pathology_report/browser --no-silent
+        run: npx angular-cli-ghpages --dir=dist/pathology_report/browser --repo=https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/ascendons/pathology.git --name="GitHub Actions" --email="actions@github.com" --no-silent
