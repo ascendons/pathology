@@ -3,7 +3,7 @@ name: Deploy Angular to GitHub Pages
 on:
   push:
     branches:
-      - main  # Change if your default branch is different
+      - main
 
 jobs:
   deploy:
@@ -22,7 +22,7 @@ jobs:
         run: npm install
 
       - name: Build Angular app
-        run: npm run build -- --configuration production --base-href /pathology_report/
+        run: npm run build -- --configuration production --base-href /pathology/
 
       - name: Deploy to GitHub Pages
-        run: npx angular-cli-ghpages --dir=dist/pathology_report --no-silent
+        run: npx angular-cli-ghpages --dir=dist/pathology_report/browser --no-silent
