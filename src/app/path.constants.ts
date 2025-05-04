@@ -45,6 +45,106 @@ export class PathConstants {
                     abnormal: false
                 }
             ]
+        },
+        {
+            label: 'Liver Function Test',
+            name: 'liverFunctionTest',
+            tests: [
+                {
+                    test: 'Bilirubin Total',
+                    name: 'bilirubinTotal',
+                    result: '',
+                    unit: 'mg/dL',
+                    limitations: '0.2 - 1.2',
+                    abnormal: false
+                },
+                {
+                    //BilirubinDirect
+                    test: 'Bilirubin Direct',
+                    name: 'bilirubinDirect',
+                    result: '',
+                    unit: 'mg/dL',
+                    limitations: '0.2 - 1.2',
+                    abnormal: false
+                },
+                {
+                    test: 'Bilirubin Indirect',
+                    name: 'bilirubinIndirect',
+                    result: '',
+                    unit: 'mg/dL',
+                    limitations: '0.2 - 1.2',
+                    abnormal: false
+                },
+                {
+                    test: 'SGPT',
+                    name: 'sgpt',
+                    result: '',
+                    unit: 'U/L',
+                    limitations: '10 - 40',
+                    abnormal: false
+                },
+                {
+                    test: 'SGOT',
+                    name: 'sgot',
+                    result: '',
+                    unit: 'U/L',
+                    limitations: '10 - 40',
+                    abnormal: false
+                },
+                {//Alkaphos
+                    test: 'Alkaline Phosphatase',
+                    name: 'alkalinePhosphatase',
+                    result: '',
+                    unit: 'U/L',
+                    limitations: '50 - 200',
+                    abnormal: false
+                },
+                {
+                    //GGT
+                    test: 'GGT',
+                    name: 'gGT',
+                    result: '',
+                    unit: 'U/L',
+                    limitations: '10 - 40',
+                    abnormal: false
+                },
+                {
+                    //totalProtein
+                    test: 'Total Protein',
+                    name: 'totalProtein',
+                    result: '',
+                    unit: 'g/dL',
+                    limitations: '6.0 - 8.0',
+                    abnormal: false
+                },
+                {
+                    //albumin
+                    test: 'Albumin',
+                    name: 'albumin',
+                    result: '',
+                    unit: 'g/dL',
+                    limitations: '3.5 - 5.0',
+                    abnormal: false
+                },
+                {
+                    //globulin
+                    test: 'Globulin',
+                    name: 'globulin',
+                    result: '',
+                    unit: 'g/dL',
+                    limitations: '2.5 - 3.5',
+                    abnormal: false
+                },
+                {
+                    //A/G Ratio
+                    test: 'A/G Ratio',
+                    name: 'aGRatio',
+                    result: '',
+                    unit: '',
+                    limitations: '',
+                    abnormal: false
+                }
+            ]
         }
     ]
 }

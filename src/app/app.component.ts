@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { RouterOutlet } from '@angular/router';
+import { AuthService } from './services/auth.service'; // Import AuthService
 
 // import autoTable from 'jspdf-autotable';
 import 'jspdf-autotable';
@@ -16,10 +17,14 @@ import 'jspdf-autotable';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private authService: AuthService // Inject AuthService
+  ) {}
 
   ngOnInit(){
-      if(sessionStorage.getItem('user_credentials') == null){
+      // Use the AuthService to check authentication status
+      if(!this.authService.isAuthenticated()){
         this.router.navigate(['/login']);
       }
   }
