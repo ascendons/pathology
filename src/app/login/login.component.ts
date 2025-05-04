@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
       try {
         const { username, password } = this.loginForm.value;
         
-          const success = await this.authService.login(username, password);
+          const success = await this.authService.loginFB(username, password);
           if (success) {
             this.router.navigate(['/']);
           } else {

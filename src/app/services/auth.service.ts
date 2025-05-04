@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Auth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from '@angular/fire/auth';
 
 @Injectable({
   providedIn: 'root'
@@ -6,12 +7,20 @@ import { Injectable } from '@angular/core';
 export class AuthService {
   private readonly STORAGE_KEY = 'user_credentials';
 
-  constructor() {
+  constructor(
+    private auth: Auth
+  ) {
     const storedUser = localStorage.getItem(this.STORAGE_KEY);
 
   }
 
+  loginFB(email: string, password: string) {
+    return signInWithEmailAndPassword(this.auth, email, password);
+  }
 
+  register(email: string, password: string) :Promise<any>{
+    return createUserWithEmailAndPassword(this.auth, email, password);
+  }
 
   async login(username: string, password: string): Promise<boolean> {
     const storedUserString = 'cGFzc3dvcmQ=';

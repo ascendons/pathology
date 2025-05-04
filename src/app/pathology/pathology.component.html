@@ -48,11 +48,11 @@
         </div>
       </div>
   
-      <button (click)="generatePDF()" *ngIf="selectedTest" class="btn">Generate PDF</button>
+      <button (click)="generateStaticHTML()" *ngIf="selectedTest" class="btn">Generate Report</button>
     </div>
   
     <!-- Right Section: PDF Preview -->
-    <div class="right-section" *ngIf="pdfUrl">
+    <!-- <div class="right-section" *ngIf="pdfUrl">
       <iframe [src]="pdfUrl | safeUrl"></iframe>
-    </div>
+    </div> -->
   </div>
