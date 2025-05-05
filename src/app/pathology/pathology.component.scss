@@ -1,138 +1,161 @@
+/* Container Layout */
 .container {
-    margin-top: 60px;
-    display: grid;
-    grid-template-columns: 1fr ;
-    min-height: calc(100vh - 60px);
-    gap: 20px;
-    padding: 20px;
-  }
-  
-  /* Left Section */
-  .left-section {
-    padding: 20px;
-    border-right: 1px solid #ccc;
-  }
-  
-  /* Grid Form Layout */
-  .grid-form {
-    display: grid;
-    grid-template-columns: 1fr;
-  }
-  
+  margin-top: 5%;
+  display: flex;
+  justify-content: center;
+  padding: 2%;
+  background-color: #f5f7fa;
+  min-height: 90vh;
+}
+
+/* Card Styling */
+.card {
+  background: #ffffff;
+  border-radius: 1rem;
+  padding: 4%;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.05);
+  width: 91%;
+  max-width: 100%;
+}
+
+.light-card {
+  background-color: #f9fafc;
+  border: 0.1rem dashed #ccc;
+  margin-top: 3%;
+}
+
+.section-title {
+  margin-bottom: 3%;
+  font-size: 1.5rem;
+  font-weight: 600;
+  border-bottom: 0.2rem solid #ddd;
+  padding-bottom: 1%;
+}
+
+/* Form Styling */
+.grid-form {
+  display: grid;
+  gap: 3%;
+}
+
+.grid-row {
+  display: flex;
+  gap: 3%;
+  flex-wrap: wrap;
+}
+
+.grid-cell {
+  flex: 1;
+  min-width: 40%;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #333;
+}
+
+input {
+  width: 90%;
+  padding: 1%;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+}
+
+select {
+  width: 97%;
+  padding: 1%;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+}
+
+/* Test Section */
+.test-section {
+  margin-top: 5%;
+}
+
+.test-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #007bff;
+  margin-bottom: 2%;
+}
+
+.link-button {
+  background: none;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-top: 1%;
+  text-decoration: underline;
+  padding: 0;
+}
+
+/* Report Section */
+.grid-report {
+  margin-top: 3%;
+  display: grid;
+  gap: 2px;
+}
+
+.report-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.report-item span {
+  font-weight: 500;
+  flex: 1;
+}
+
+.report-item input {
+  flex: 2;
+  padding: 1%;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+}
+
+/* Button Styles */
+.btn {
+  margin-top: 4%;
+  padding: 1%;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.primary-btn {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.primary-btn:hover {
+  background-color: #218838;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
   .grid-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 10px;
+    flex-direction: column;
   }
-  
-  .grid-cell {
-    margin-bottom: 10px;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  .grid-form label {
-    font-weight: bold;
-    align-self: center;
-    width: 50%;
-  }
-  
-  .grid-form input,
-  .grid-form select {
-    width: 80%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  /* Grid Report Layout */
-  .grid-report {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 10px;
-    margin-bottom: 20px;
-  }
-  
+
   .report-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
   }
-  
-  .report-item span {
-    font-weight: bold;
-  }
-  
+
   .report-item input {
-    width: 50%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  /* Button Styling */
-  .btn {
-    display: block;
     width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    text-align: center;
-    margin-bottom: 20px;
   }
-  
-  .btn:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Right Section (PDF Preview) */
-  .right-section {
-    padding: 20px;
-  }
-  
-  .right-section iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-  }
-  
-  /* Responsive Design */
-  @media screen and (max-width: 768px) {
-    .container {
-      grid-template-columns: 1fr;
-      height: auto;
-    }
-  
-    .left-section {
-      border-right: none;
-      border-bottom: 1px solid #ccc;
-    }
-  
-    .grid-row {
-      grid-template-columns: 1fr;
-    }
-  
-    .grid-form input,
-    .grid-form select {
-      width: 100%;
-    }
-  
-    .report-item input {
-      width: 60%;
-    }
-  
-    .right-section {
-      order: 2;
-      height: 500px;
-    }
-  
-    .left-section {
-      order: 1;
-    }
-  }
-  
+}
+
+.w-100 {
+  width: 100%;
+}

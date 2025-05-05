@@ -10,5 +10,12 @@
     height: 60px;
     text-align: center;
     z-index: 1000;
+    box-shadow: #007bff 0px 0px 20px;
   }
-  
+
+
+  @media screen and (max-width: 768px) {
+    .header-title{
+      display: none;
+    }
+  }
